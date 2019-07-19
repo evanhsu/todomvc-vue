@@ -4,7 +4,8 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "express": "4.16.2"
+        "express": "4.16.2",
+        "mongodb": "^3.3.0-beta2"
     },
     "devDependencies": {
         "mocha": "5.0.0",
@@ -12,6 +13,7 @@
         "supertest": "3.0.0"
     },
     "scripts": {
-        "test": "mocha --recursive tests --exit"
+        "test": "mocha --recursive tests --exit",
+        "start": "PORT=8080 node server.js"
     }
 }
