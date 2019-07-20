@@ -32,12 +32,7 @@ app.get('/api/todos', function (request, response) {
 
 app.put('/api/todos', function (request, response) {
     console.log(request.body);
-    var todo = {
-        id: request.body.id,
-        title: request.body.title,
-        completed: request.body.completed
-    };
-    todos[todo.id - 1] = todo;
+    todos = request.body;
     
     return response.status(201).json(todos);
 });

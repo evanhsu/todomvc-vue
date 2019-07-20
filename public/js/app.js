@@ -27,7 +27,7 @@
 
 		// app initial state
 		data: {
-			todos: todoStorage.fetch(),
+			todos: [],
 			newTodo: '',
 			editedTodo: null,
 			visibility: 'all'
@@ -108,6 +108,11 @@
 			removeCompleted: function () {
 				this.todos = filters.active(this.todos);
 			}
+		},
+		
+		created: async function() {
+			let p = await todoStorage.fetch();
+			this.todos = p;
 		},
 
 		// a custom directive to wait for the DOM to be updated
