@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "PORT=8080", "node", "server.js" ]
+CMD [ "node", "server.js" ]
