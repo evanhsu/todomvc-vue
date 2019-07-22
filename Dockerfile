@@ -2,8 +2,10 @@ FROM node:10
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY public/package*.json ./public/
+RUN cd public && npm install && cd ..
 
+COPY package*.json ./
 RUN npm install
 
 COPY . .
